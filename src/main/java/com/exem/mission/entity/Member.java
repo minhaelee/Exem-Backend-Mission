@@ -1,7 +1,9 @@
 package com.exem.mission.entity;
 
-public class Member {
+import lombok.Data;
 
+@Data
+public class Member {
 	private int id;
 	private String username;
 	private String email;

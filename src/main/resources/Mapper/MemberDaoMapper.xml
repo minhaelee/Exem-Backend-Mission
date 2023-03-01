@@ -7,6 +7,9 @@
     <select id="findByEmail" resultType="com.exem.mission.entity.Member">
         SELECT * FROM member WHERE email=#{email}
     </select>
+    <select id="findByUsername" resultType="com.exem.mission.entity.Member">
+        SELECT * FROM member WHERE username=#{username}
+    </select>
     <update id="updateStatus">
         UPDATE member set status = '1' where email = #{email}
     </update>

@@ -8,6 +8,7 @@ import com.exem.mission.entity.Member;
 public interface MemberDao {
 	void save(Member member);
 	Member findByEmail(String email);
+	Member findByUsername(String username);
 	void updateStatus(String email);
 	void updateInfo(Member member);
 }
