@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exem.mission.dao.CommentDao">
+    <insert id="save" >
+        INSERT INTO comment (post_id, content, member_id) VALUES (#{postId},#{content},#{memberId})
+    </insert>
+    <select id="getByPost" resultType="com.exem.mission.entity.comment">
+        SELECT * FROM comment where post_id = #{postId}
+    </select>
+    <select id="getById" resultType="com.exem.mission.entity.comment">
+        SELECT * FROM comment where id = #{id}
+    </select>
+    <delete id="delete">
+        delete from comment where id = #{id}
+    </delete>
+    <update id="update">
+        update comment
+        <set>
+            <if test="content != null">content=#{content}</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>
