@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.exem.mission.dao.PostDao">
+    <insert id="save" >
+        INSERT INTO post (title, content, board_id, member_id) VALUES (#{title},#{content},#{boardId},#{memberId})
+    </insert>
+    <select id="getAll" resultType="com.exem.mission.entity.post">
+        SELECT * FROM post order by id desc
+    </select>
+    <select id="getById" resultType="com.exem.mission.entity.post">
+        SELECT * FROM post where id = #{id}
+    </select>
+    <delete id="delete">
+        delete from post where id = #{id}
+    </delete>
+    <update id="update">
+        update post
+        <set>
+            <if test="title != null">title=#{title},</if>
+            <if test="content != null">content=#{content}</if>
+        </set>
+        where id = #{id}
+    </update>
+</mapper>

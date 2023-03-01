@@ -8,6 +8,9 @@
     <select id="getAll" resultType="com.exem.mission.entity.Board">
         SELECT * FROM board order by id desc
     </select>
+    <select id="getById" resultType="com.exem.mission.entity.Board">
+        SELECT * FROM board where id = #{id}
+    </select>
     <delete id="delete">
         delete from board where id = #{id}
     </delete>

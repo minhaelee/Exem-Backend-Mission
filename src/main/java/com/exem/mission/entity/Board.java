@@ -10,6 +10,6 @@ public class Board {
 	private int id;
 	private String title;
 	private Date updated;
-	private String memberId;
+	private int memberId;
 
 }

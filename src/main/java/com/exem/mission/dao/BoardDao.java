@@ -10,6 +10,7 @@ import com.exem.mission.entity.Board;
 public interface BoardDao {
 
 	List<Board> getAll();
+	Board getById(int id);
 	void save(String title, int memberId);
 	void delete(int id);
 	void update(int id, String title);

@@ -29,7 +29,7 @@ public class BoardController {
 		return "board/list";
 	}
 
-	@PostMapping
+	@PostMapping("list")
 	public String create(String title, String username){
 
 		boardService.reg(title, username);
@@ -41,7 +41,6 @@ public class BoardController {
 	public String delete(@PathVariable int id){
 
 		boardService.delete(id);
-
 		return "board/list";
 	}
 
@@ -50,5 +49,7 @@ public class BoardController {
 		boardService.update(id, title);
 		return "board/list";
 	}
+
+
 
 }
